@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+.moon-surface {
+  position: relative;
+  background:
+    radial-gradient(circle at 24% 34%, rgba(103, 232, 249, 0.24) 0 4.5%, transparent 7%),
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.22) 0 2.3%, rgba(15, 23, 42, 0.18) 2.8%, transparent 4.5%),
+    radial-gradient(circle at 68% 22%, rgba(255, 255, 255, 0.16) 0 4%, rgba(15, 23, 42, 0.16) 4.8%, transparent 7%),
+    radial-gradient(circle at 80% 72%, rgba(255, 255, 255, 0.18) 0 5%, rgba(15, 23, 42, 0.2) 5.8%, transparent 8%),
+    radial-gradient(circle at 38% 73%, rgba(255, 255, 255, 0.15) 0 3.5%, rgba(15, 23, 42, 0.16) 4%, transparent 6%),
+    radial-gradient(circle at 57% 56%, rgba(255, 255, 255, 0.1) 0 2%, rgba(15, 23, 42, 0.18) 2.5%, transparent 4%),
+    radial-gradient(circle at 11% 81%, rgba(255, 255, 255, 0.11) 0 1.8%, transparent 3.2%),
+    radial-gradient(circle at 91% 17%, rgba(255, 255, 255, 0.12) 0 1.6%, transparent 3%),
+    linear-gradient(140deg, #101827 0%, #24303d 48%, #737985 100%);
+}
+
+.moon-surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(118deg, transparent 0 34%, rgba(255, 255, 255, 0.08) 35%, transparent 38%),
+    linear-gradient(72deg, transparent 0 58%, rgba(15, 23, 42, 0.28) 59%, transparent 63%),
+    repeating-radial-gradient(circle at 52% 48%, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 18px);
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}
+
+.moon-surface::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 42%, transparent 0 42%, rgba(2, 6, 23, 0.45) 100%);
+}
+
+.map-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 8.333% 8.333%;
+}
+
+.moon-crater {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 10px 12px 18px rgba(255, 255, 255, 0.1),
+    inset -14px -16px 24px rgba(2, 6, 23, 0.34),
+    0 12px 22px rgba(2, 6, 23, 0.16);
+}
+
+.moon-crater::after {
+  content: '';
+  position: absolute;
+  inset: 18%;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset -8px -8px 18px rgba(2, 6, 23, 0.28);
+}
+
+.moon-crater-light {
+  background: radial-gradient(circle at 34% 30%, rgba(255, 255, 255, 0.28), rgba(148, 163, 184, 0.14) 46%, rgba(15, 23, 42, 0.18) 100%);
+}
+
+.moon-crater-mid {
+  background: radial-gradient(circle at 34% 30%, rgba(255, 255, 255, 0.2), rgba(100, 116, 139, 0.17) 48%, rgba(2, 6, 23, 0.24) 100%);
+}
+
+.moon-crater-dark {
+  background: radial-gradient(circle at 34% 30%, rgba(255, 255, 255, 0.12), rgba(51, 65, 85, 0.2) 45%, rgba(2, 6, 23, 0.36) 100%);
+}

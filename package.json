@@ -1,0 +1,42 @@
+{
+  "name": "moon-delivery-sim",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:client": "vite --host 0.0.0.0",
+    "dev:server": "tsx watch server/index.ts",
+    "build": "tsc -b && vite build",
+    "start": "node dist-server/server/index.js",
+    "test": "vitest run",
+    "db:push": "drizzle-kit push"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.2",
+    "@fastify/static": "^8.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "better-sqlite3": "^11.7.0",
+    "drizzle-orm": "^0.38.3",
+    "fastify": "^5.2.1",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^6.0.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "drizzle-kit": "^0.30.1",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

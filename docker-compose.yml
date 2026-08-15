@@ -1,0 +1,13 @@
+services:
+  moon-delivery:
+    build: .
+    ports:
+      - "8787:8787"
+    volumes:
+      - moon-data:/app/data
+    environment:
+      - DATABASE_URL=/app/data/moon-delivery.sqlite
+      - PORT=8787
+
+volumes:
+  moon-data:
